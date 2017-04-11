@@ -1,1 +1,40 @@
-{     "devDependencies": {         "gulp-remember": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-gulp-remember",     "homepage": "https://github.com/npmtest/node-npmtest-gulp-remember",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-gulp-remember.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "test coverage for [gulp-remember (v0.3.1)](http://github.com/ahaurw01/gulp-remember) [![npm package](https://img.shields.io/npm/v/npmtest-gulp-remember.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-gulp-remember) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-gulp-remember.svg)](https://travis-ci.org/npmtest/node-npmtest-gulp-remember)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "gulp-remember": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-gulp-remember",
+    "keywords": [
+        "coverage",
+        "test",
+        "gulp-remember"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_gulp_remember.js",
+    "name": "npmtest-gulp-remember",
+    "nameAlias": "npmtest_gulp_remember",
+    "nameOriginal": "npmtest-gulp-remember",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-gulp-remember.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
