@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-gulp-remember/gulp-remember/index.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-gulp-remember/node_modules/gulp-remember/index.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-gulp-remember">npmtest-gulp-remember (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-gulp-remember/gulp-remember/index.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-gulp-remember/node_modules/gulp-remember/index.js</span></h1>
     <h2>
         
         Statements: <span class="metric">17.78% <small>(8 / 45)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-gulp-remember/gulp-remember/</a> » index.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-gulp-remember/node_modules/gulp-remember/</a> &#187; index.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -441,33 +443,33 @@ var through = require('through2'),
  * @param cacheName {string} Name to give your cache.
  *                           Caches with different names can know about different sets of files.
  */
-<span class="fstat-no" title="function not covered">function gulpRemember(cacheName) {</span>
-<span class="cstat-no" title="statement not covered">  var cache; </span>// the files we've ever put our hands on in the current stream
+<span class="fstat-no" title="function not covered" >function gulpRemember(cacheName) {</span>
+<span class="cstat-no" title="statement not covered" >  var cache; </span>// the files we've ever put our hands on in the current stream
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (cacheName !== undefined &amp;&amp; typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
-<span class="cstat-no" title="statement not covered">    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember")(name); where name is undefined, number or string');</span>
+<span class="cstat-no" title="statement not covered" >  if (cacheName !== undefined &amp;&amp; typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember")(name); where name is undefined, number or string');</span>
   }
-<span class="cstat-no" title="statement not covered">  cacheName = cacheName || defaultName; </span>// maybe need to use a default cache
-<span class="cstat-no" title="statement not covered">  caches[cacheName] = caches[cacheName] || {}; </span>// maybe initialize the named cache
-<span class="cstat-no" title="statement not covered">  cache = caches[cacheName];</span>
+<span class="cstat-no" title="statement not covered" >  cacheName = cacheName || defaultName; </span>// maybe need to use a default cache
+<span class="cstat-no" title="statement not covered" >  caches[cacheName] = caches[cacheName] || {}; </span>// maybe initialize the named cache
+<span class="cstat-no" title="statement not covered" >  cache = caches[cacheName];</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">  function transform(file, enc, callback) {</span>
-<span class="cstat-no" title="statement not covered">    var fileKey = file.path.toLowerCase();</span>
-<span class="cstat-no" title="statement not covered">    cache[fileKey] = file; </span>// add file to our cache
-<span class="cstat-no" title="statement not covered">    callback();</span>
+<span class="fstat-no" title="function not covered" >  function transform(file, enc, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    var fileKey = file.path.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >    cache[fileKey] = file; </span>// add file to our cache
+<span class="cstat-no" title="statement not covered" >    callback();</span>
   }
 &nbsp;
-<span class="fstat-no" title="function not covered">  function flush(callback) {</span>
+<span class="fstat-no" title="function not covered" >  function flush(callback) {</span>
     // add all files we've ever seen back into the stream
-<span class="cstat-no" title="statement not covered">    for (var key in cache) {</span>
-<span class="cstat-no" title="statement not covered">      if (cache.hasOwnProperty(key)) {</span>
-<span class="cstat-no" title="statement not covered">        this.push(cache[key]); </span>// add this file back into the current stream
+<span class="cstat-no" title="statement not covered" >    for (var key in cache) {</span>
+<span class="cstat-no" title="statement not covered" >      if (cache.hasOwnProperty(key)) {</span>
+<span class="cstat-no" title="statement not covered" >        this.push(cache[key]); </span>// add this file back into the current stream
       }
     }
-<span class="cstat-no" title="statement not covered">    callback();</span>
+<span class="cstat-no" title="statement not covered" >    callback();</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return through.obj(transform, flush);</span>
+<span class="cstat-no" title="statement not covered" >  return through.obj(transform, flush);</span>
 }
 &nbsp;
 /**
@@ -477,21 +479,21 @@ var through = require('through2'),
  * @param cacheName {string} name of the cache from which to drop the file
  * @param path {string} path of the file to forget
  */
-gulpRemember.forget = <span class="fstat-no" title="function not covered">function (cacheName, path) {</span>
-<span class="cstat-no" title="statement not covered">  if (arguments.length === 1) {</span>
-<span class="cstat-no" title="statement not covered">    path = cacheName;</span>
-<span class="cstat-no" title="statement not covered">    cacheName = defaultName;</span>
+gulpRemember.forget = <span class="fstat-no" title="function not covered" >function (cacheName, path) {</span>
+<span class="cstat-no" title="statement not covered" >  if (arguments.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >    path = cacheName;</span>
+<span class="cstat-no" title="statement not covered" >    cacheName = defaultName;</span>
   }
-<span class="cstat-no" title="statement not covered">  path = path.toLowerCase();</span>
-<span class="cstat-no" title="statement not covered">  if (typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
-<span class="cstat-no" title="statement not covered">    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember").forget(cacheName, path); where cacheName is undefined, number or string and path is a string');</span>
+<span class="cstat-no" title="statement not covered" >  path = path.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember").forget(cacheName, path); where cacheName is undefined, number or string and path is a string');</span>
   }
-<span class="cstat-no" title="statement not covered">  if (caches[cacheName] === undefined) {</span>
-<span class="cstat-no" title="statement not covered">    util.log(pluginName, '- .forget() warning: cache ' + cacheName + ' not found');</span>
-  } else <span class="cstat-no" title="statement not covered">if (caches[cacheName][path] === undefined) {</span>
-<span class="cstat-no" title="statement not covered">    util.log(pluginName, '- .forget() warning: file ' + path + ' not found in cache ' + cacheName);</span>
+<span class="cstat-no" title="statement not covered" >  if (caches[cacheName] === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    util.log(pluginName, '- .forget() warning: cache ' + cacheName + ' not found');</span>
+  } else <span class="cstat-no" title="statement not covered" >if (caches[cacheName][path] === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    util.log(pluginName, '- .forget() warning: file ' + path + ' not found in cache ' + cacheName);</span>
   } else {
-<span class="cstat-no" title="statement not covered">    delete caches[cacheName][path];</span>
+<span class="cstat-no" title="statement not covered" >    delete caches[cacheName][path];</span>
   }
 };
 &nbsp;
@@ -501,17 +503,17 @@ gulpRemember.forget = <span class="fstat-no" title="function not covered">functi
  *
  * @param cacheName {string} name of the cache to wipe
  */
-gulpRemember.forgetAll = <span class="fstat-no" title="function not covered">function (cacheName) {</span>
-<span class="cstat-no" title="statement not covered">  if (arguments.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">    cacheName = defaultName;</span>
+gulpRemember.forgetAll = <span class="fstat-no" title="function not covered" >function (cacheName) {</span>
+<span class="cstat-no" title="statement not covered" >  if (arguments.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    cacheName = defaultName;</span>
   }
-<span class="cstat-no" title="statement not covered">  if (typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
-<span class="cstat-no" title="statement not covered">    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember").forgetAll(cacheName); where cacheName is undefined, number or string');</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember").forgetAll(cacheName); where cacheName is undefined, number or string');</span>
   }
-<span class="cstat-no" title="statement not covered">  if (caches[cacheName] === undefined) {</span>
-<span class="cstat-no" title="statement not covered">    util.log(pluginName, '- .forget() warning: cache ' + cacheName + ' not found');</span>
+<span class="cstat-no" title="statement not covered" >  if (caches[cacheName] === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >    util.log(pluginName, '- .forget() warning: cache ' + cacheName + ' not found');</span>
   } else {
-<span class="cstat-no" title="statement not covered">    caches[cacheName] = {};</span>
+<span class="cstat-no" title="statement not covered" >    caches[cacheName] = {};</span>
   }
 }
 &nbsp;
@@ -521,24 +523,23 @@ gulpRemember.forgetAll = <span class="fstat-no" title="function not covered">fun
  *
  * @param cacheName {string} name of the cache to retrieve
  */
-gulpRemember.cacheFor = <span class="fstat-no" title="function not covered">function (cacheName) {</span>
-<span class="cstat-no" title="statement not covered">  if (arguments.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">    cacheName = defaultName;</span>
+gulpRemember.cacheFor = <span class="fstat-no" title="function not covered" >function (cacheName) {</span>
+<span class="cstat-no" title="statement not covered" >  if (arguments.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    cacheName = defaultName;</span>
   }
-<span class="cstat-no" title="statement not covered">  if (typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
-<span class="cstat-no" title="statement not covered">    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember").cacheFor(cacheName); where cacheName is undefined, number or string');</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof cacheName !== 'number' &amp;&amp; typeof cacheName !== 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    throw new util.PluginError(pluginName, 'Usage: require("gulp-remember").cacheFor(cacheName); where cacheName is undefined, number or string');</span>
   }
-<span class="cstat-no" title="statement not covered">  return caches[cacheName];</span>
+<span class="cstat-no" title="statement not covered" >  return caches[cacheName];</span>
 }
 &nbsp;
 module.exports = gulpRemember;
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 23:29:46 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 21:23:16 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
